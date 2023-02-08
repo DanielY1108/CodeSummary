@@ -28,7 +28,10 @@ let orders: [CoffeeOrder] = customers.map(CoffeeOrder.init)
 
 let ordersList = CoffeeOrderList(orderList: orders)
 
+// 고차함수 사용할 때 일반적으로 인수를 사용하면 이런식으로 사용했었다.
 
+let orderss = customers.map { CoffeeOrder(name: $0, order: $1) }
+print(orderss)
 
 // 생성"()" 을 안해줄 시 init의 타입은?
 
@@ -45,4 +48,5 @@ let order3 = CoffeeOrder.init(name: "Nina", order: nina1)
 let orders1: [CoffeeOrder] = [order1, order2, order3]
 
 let ordersList1 = CoffeeOrderList(orderList: orders1)
+
 
