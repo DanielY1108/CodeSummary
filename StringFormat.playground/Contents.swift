@@ -42,6 +42,14 @@ String(format: "[%d, %d]", num1, num2)      // [123, 456]
 // 1$(첫 번째 인수), 2$(두 번째 인수)를 사용하여 위치를 변경이 가능.
 String(format: "[%2$d, %1$d]", num1, num2)  // [456, 123]
 
+let hours = 7
+let minutes = 30
+let seconds = 5
+String(format: "%d : %d : %d", hours, minutes, seconds)
+String(format: "%02d : %02d : %02d", hours, minutes, seconds)      // [123, 456]
+
+
+
 // MARK: - 문자열
 let firstName = "Daniel"
 let lastName = "Yang"
