@@ -25,6 +25,13 @@
 			remoteGlobalIDString = 6552DD3F29A38EA4008BC4E1;
 			remoteInfo = "UnitTestCalc-Demo";
 		};
+		6552DD6F29A3AEA1008BC4E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6552DD3829A38EA4008BC4E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6552DD3F29A38EA4008BC4E1;
+			remoteInfo = "UnitTestCalc-Demo";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +46,7 @@
 		6552DD5B29A38F14008BC4E1 /* UnitTestCalc-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UnitTestCalc-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6552DD5D29A38F14008BC4E1 /* UnitTestCalc_DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestCalc_DemoTests.swift; sourceTree = "<group>"; };
 		6552DD6429A391A6008BC4E1 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		6552DD6B29A3AEA1008BC4E1 /* UnitTestCalc-DemoTests1.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UnitTestCalc-DemoTests1.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +58,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6552DD5829A38F14008BC4E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6552DD6829A3AEA1008BC4E1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -73,6 +88,7 @@
 			children = (
 				6552DD4029A38EA4008BC4E1 /* UnitTestCalc-Demo.app */,
 				6552DD5B29A38F14008BC4E1 /* UnitTestCalc-DemoTests.xctest */,
+				6552DD6B29A3AEA1008BC4E1 /* UnitTestCalc-DemoTests1.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,6 +154,24 @@
 			productReference = 6552DD5B29A38F14008BC4E1 /* UnitTestCalc-DemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		6552DD6A29A3AEA1008BC4E1 /* UnitTestCalc-DemoTests1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6552DD7129A3AEA1008BC4E1 /* Build configuration list for PBXNativeTarget "UnitTestCalc-DemoTests1" */;
+			buildPhases = (
+				6552DD6729A3AEA1008BC4E1 /* Sources */,
+				6552DD6829A3AEA1008BC4E1 /* Frameworks */,
+				6552DD6929A3AEA1008BC4E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6552DD7029A3AEA1008BC4E1 /* PBXTargetDependency */,
+			);
+			name = "UnitTestCalc-DemoTests1";
+			productName = "UnitTestCalc-DemoTests1";
+			productReference = 6552DD6B29A3AEA1008BC4E1 /* UnitTestCalc-DemoTests1.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -152,6 +186,10 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					6552DD5A29A38F14008BC4E1 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 6552DD3F29A38EA4008BC4E1;
+					};
+					6552DD6A29A3AEA1008BC4E1 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 6552DD3F29A38EA4008BC4E1;
 					};
@@ -172,6 +210,7 @@
 			targets = (
 				6552DD3F29A38EA4008BC4E1 /* UnitTestCalc-Demo */,
 				6552DD5A29A38F14008BC4E1 /* UnitTestCalc-DemoTests */,
+				6552DD6A29A3AEA1008BC4E1 /* UnitTestCalc-DemoTests1 */,
 			);
 		};
 /* End PBXProject section */
@@ -188,6 +227,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6552DD5929A38F14008BC4E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6552DD6929A3AEA1008BC4E1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -216,6 +262,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6552DD6729A3AEA1008BC4E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -223,6 +276,11 @@
 			isa = PBXTargetDependency;
 			target = 6552DD3F29A38EA4008BC4E1 /* UnitTestCalc-Demo */;
 			targetProxy = 6552DD5F29A38F14008BC4E1 /* PBXContainerItemProxy */;
+		};
+		6552DD7029A3AEA1008BC4E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6552DD3F29A38EA4008BC4E1 /* UnitTestCalc-Demo */;
+			targetProxy = 6552DD6F29A3AEA1008BC4E1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -452,6 +510,50 @@
 			};
 			name = Release;
 		};
+		6552DD7229A3AEA1008BC4E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZG488AACV6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.DanielY1108.UnitTestCalc-DemoTests1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnitTestCalc-Demo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UnitTestCalc-Demo";
+			};
+			name = Debug;
+		};
+		6552DD7329A3AEA1008BC4E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZG488AACV6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.DanielY1108.UnitTestCalc-DemoTests1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnitTestCalc-Demo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UnitTestCalc-Demo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -478,6 +580,15 @@
 			buildConfigurations = (
 				6552DD6229A38F14008BC4E1 /* Debug */,
 				6552DD6329A38F14008BC4E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6552DD7129A3AEA1008BC4E1 /* Build configuration list for PBXNativeTarget "UnitTestCalc-DemoTests1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6552DD7229A3AEA1008BC4E1 /* Debug */,
+				6552DD7329A3AEA1008BC4E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
