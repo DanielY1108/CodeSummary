@@ -12,51 +12,49 @@ class Observable<T> {
         self.value = value
     }
     
-    // 동작을 담는 클로저 (실행 X)
+    // 동작을 담아두는 클로저입니다. (실행 X)
     private var listener: ((T?) -> Void)?
     
+    // 이 함수가 호출이 되면 아래와 같은 작업을 실행
     func bind(_ listener: @escaping (T?) -> Void) {
-        // 첫번째로 클로저의 값으로 실행을 시키준다(여기서는 self.value = num 이 동작을 실행)
+        // completion에서 value의 값을 갖고 동작을 실행시킨다 (여기서는 아래 저장해둔 self.value = num 동작을 실행)
         listener(value)
-        // 그리고 위의 동작을 저장시켜 둔다. 그리고 value의 값이 변할 때마다 저장된 동작이 호출 됩니다.
+        // 다음으로 변수로 만들어 놓은 listener에 위의 동작을 저장시킨다.
         self.listener = listener
     }
 }
 
-
-class Cart {
-    
-    var viewModel = ViewModel()
-    var value = 0
-    
-    func setBinding() {
-        
-        viewModel.itemcCount.bind { num in
-            guard let num = num else { return }
-            self.value = num
-        }
-    }
-
+class ViewModel {
+    var item: Observable<Int> = Observable(0)
 }
 
-class ViewModel {
+class Cart {
+    var viewModel = ViewModel()
+    var itemcCount = 0
     
-    var itemcCount: Observable<Int>
-    
-    init() {
-        self.itemcCount = Observable(0)
+    func setBinding() {
+        viewModel.item.bind { [weak self] num in
+            guard let num = num else { return }
+            self?.itemcCount = num
+        }
     }
     
+    func addCount(n: Int) {
+        viewModel.item.value = n
+    }
 }
 
 
 let cart = Cart()
-cart.setBinding()
 
-cart.viewModel.itemcCount.value = 10
-print(cart.value)
-cart.viewModel.itemcCount.value = 20
-print(cart.value)
-cart.viewModel.itemcCount.value = 30
-print(cart.value)
+// 이 바인딩을 실행시켜주면 동작 실행 및 동작을 저장
+cart.setBinding()
+print(cart.itemcCount)
+// 값이 바뀌면 didSet이 동작하여 저장해논 동작을 실행
+cart.addCount(n: 10)
+print(cart.itemcCount)
+cart.addCount(n: 20)
+print(cart.itemcCount)
+cart.addCount(n: 30)
+print(cart.itemcCount)
 
