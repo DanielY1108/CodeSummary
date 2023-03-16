@@ -25,11 +25,11 @@ class ViewController: UIViewController {
 class CustomRoundRectView: UIView {
     
     override func draw(_ rect: CGRect) {
-//        let path = UIBezierPath(roundedRect: CGRect(x: 50, y: 200, width: 300, height: 100),
-//                                cornerRadius: CGFloat(50))
         let path = UIBezierPath(roundedRect: CGRect(x: 50, y: 200, width: 300, height: 100),
-                                byRoundingCorners: [.topLeft, .bottomRight],
-                                cornerRadii: CGSize(width: 50, height: 0))
+                                cornerRadius: CGFloat(50))
+//        let path = UIBezierPath(roundedRect: CGRect(x: 50, y: 200, width: 300, height: 100),
+//                                byRoundingCorners: [.topLeft, .bottomRight],
+//                                cornerRadii: CGSize(width: 50, height: 0))
         
         path.lineWidth = 5
         UIColor.red.setStroke()
