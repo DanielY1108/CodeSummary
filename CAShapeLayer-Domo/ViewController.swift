@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let customView = CustomRoundRectView(frame: CGRect(x: 0,
+        let customView = CustomView(frame: CGRect(x: 0,
                                                   y: 100,
                                                   width: self.view.frame.width,
                                                   height: 650))
@@ -21,6 +21,40 @@ class ViewController: UIViewController {
     }
 }
 
+// CAShapeLayer를 통해 그리기
+
+class CustomView: UIView {
+    
+    override func draw(_ rect: CGRect) {
+        // UIBezierPath 객체 생성
+        let path = UIBezierPath(roundedRect: CGRect(x: 50, y: 200, width: 300, height: 100),
+                                cornerRadius: CGFloat(50))
+        // CAShapeLayer 객체 생성
+        let layer = CAShapeLayer()
+        layer.path = path.cgPath    // CGPath(Core Graphics) 타입으로 전달
+
+        // 그리기 속성 설정
+        layer.lineWidth = 5
+        layer.strokeColor = UIColor.red.cgColor
+        layer.fillColor = UIColor.blue.cgColor
+        
+        // 애니메이션 생성
+        let animation = CABasicAnimation(keyPath: "position.y")
+        animation.fromValue = 0                  // 원점
+        animation.toValue = 200                  // Y축으로 200만큼 이동
+        animation.duration = 3.0                 // 3초 동안 지속
+        animation.fillMode = .backwards           // 종료 지점의 프레임 사용
+        animation.isRemovedOnCompletion = false  // 애니메이션이 종료되더라도 프레임 유지
+        
+        // 애니메이션 추가
+        layer.add(animation, forKey: nil)
+        
+        // View의 Layer에 shapeLayer 추가
+        self.layer.addSublayer(layer)
+    }
+}
+
+// MARK: - UIBezierPath를 통한 탭바 모양 구현(알약 모양)
 
 class CustomRoundRectView: UIView {
     
@@ -36,7 +70,6 @@ class CustomRoundRectView: UIView {
         path.stroke()
     }
 }
-
 
 // MARK: - addClip 교차 영역에 있는 것만 렌더링
 class CustomAddClipView: UIView {
@@ -61,8 +94,6 @@ class CustomAddClipView: UIView {
         circlePath.stroke()
     }
 }
-
-
 
 // MARK: - 연습 선으로 도형그리기
 class CustomLineView: UIView {
